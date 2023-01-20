@@ -1,10 +1,10 @@
-import { error, getInput, setFailed } from '@actions/core';
+import { error, getInput, setFailed, info } from '@actions/core';
 import ts from 'typescript';
 import path from 'path';
 
 const check = async (projectPath: string, files?: string[]) => {
   // eslint-disable-next-line no-console
-  console.log("flo", projectPath)
+  info("flo", projectPath)
   const json = ts.readConfigFile(projectPath, ts.sys.readFile);
 
   if (json.error) {
